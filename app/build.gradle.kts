@@ -2,6 +2,9 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.apollo.graphql)
+    alias(libs.plugins.kotlin.hilt)
+    id("kotlin-kapt")
 }
 
 android {
@@ -52,9 +55,13 @@ dependencies {
     implementation(platform(libs.okhttp.bom))
     implementation(libs.okhttp.core)
     implementation(libs.retrofit2)
+    implementation(libs.retrofit2.gson)
     implementation(libs.gson)
     implementation(libs.coli.compose)
     implementation(libs.coli.network)
+    implementation(libs.hilt.android.core)
+    kapt(libs.hilt.android.compiler)
+    implementation(libs.apollo.graphql.core)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
@@ -63,4 +70,18 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+}
+
+kapt {
+    correctErrorTypes = true
+}
+
+apollo {
+    service("service") {
+        packageName.set("com.symvox.githubuserlist")
+        introspection {
+            endpointUrl.set("https://docs.github.com/public/fpt/schema.docs.graphql")
+            schemaFile.set(file("src/main/graphql/schema.graphqls"))
+        }
+    }
 }

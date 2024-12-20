@@ -13,6 +13,8 @@ retrofit = "2.11.0"
 gson = "2.11.0"
 glide = "4.16.0"
 coli = "3.0.4"
+hilt = "2.51.1"
+graphql = "4.1.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -32,13 +34,17 @@ androidx-material3 = { group = "androidx.compose.material3", name = "material3" 
 okhttp-bom = { group = "com.squareup.okhttp3", name = "okhttp-bom", version.ref = "okhttpBom"}
 okhttp-core = { group = "com.squareup.okhttp3", name = "okhttp"}
 retrofit2 = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit"}
+retrofit2-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit"}
 gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson"}
-glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide"}
 coli-compose = { group = "io.coil-kt.coil3", name = "coil-compose", version.ref = "coli"}
 coli-network = { group = "io.coil-kt.coil3", name = "coil-network-okhttp", version.ref = "coli"}
+hilt-android-core = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt"}
+hilt-android-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt"}
+apollo-graphql-core = { group = "com.apollographql.apollo", name = "apollo-runtime", version.ref = "graphql"}
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
-
+kotlin-hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+apollo-graphql = { id = "com.apollographql.apollo", version.ref = "graphql" }
