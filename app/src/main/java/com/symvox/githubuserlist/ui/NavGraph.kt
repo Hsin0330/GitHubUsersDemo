@@ -5,8 +5,6 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.compose.navigation
-import androidx.navigation.compose.rememberNavController
 import com.symvox.githubuserlist.entity.User
 import com.symvox.githubuserlist.ui.repo.UserRepoScreen
 import com.symvox.githubuserlist.ui.search.SearchScreen
@@ -18,10 +16,9 @@ fun NavGraph(
     navController: NavHostController,
     startDestination: Any = Search
 ) {
-    val navController = rememberNavController()
     NavHost(
         navController = navController,
-        startDestination = Search,
+        startDestination = startDestination,
         modifier = modifier
     ) {
 
@@ -35,28 +32,5 @@ fun NavGraph(
         ) { navBackStackEntry ->
             UserRepoScreen()
         }
-//        navigation<Graph.UserGraph>(startDestination = Destinations.SearchUser) {
-//            composable<Destinations.SearchUser> {
-//                SearchScreen { user ->
-//                    navController.navigate(Destinations.UserRepositoryList(user))
-//                }
-//            }
-//            composable<Destinations.UserRepositoryList>(
-//                typeMap = mapOf(typeOf<User>() to UserType),
-//            ) { navBackStackEntry ->
-//                UserRepoScreen()
-//            }
-//        }
-
-//        navigation<Graph.RepoGraph>(
-//            typeMap = mapOf(typeOf<User>() to UserType),
-//            startDestination = Destinations.UserRepositoryList()
-//        ) {
-//            composable<Destinations.UserRepositoryList>(
-//                typeMap = mapOf(typeOf<User>() to UserType),
-//            ) { navBackStackEntry ->
-//                UserRepoScreen()
-//            }
-//        }
     }
 }

@@ -31,7 +31,6 @@ import androidx.paging.compose.collectAsLazyPagingItems
 import com.symvox.githubuserlist.R
 import com.symvox.githubuserlist.entity.Language
 import com.symvox.githubuserlist.entity.Repo
-import com.symvox.githubuserlist.entity.User
 import com.symvox.githubuserlist.ui.search.UserItem
 
 @Composable

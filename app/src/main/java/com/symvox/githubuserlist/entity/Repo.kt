@@ -1,7 +1,5 @@
 package com.symvox.githubuserlist.entity
 
-import com.google.gson.annotations.SerializedName
-
 data class Repo(
     val name: String,
     val language: Language?,

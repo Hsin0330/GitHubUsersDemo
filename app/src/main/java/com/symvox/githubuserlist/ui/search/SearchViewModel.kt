@@ -2,7 +2,6 @@ package com.symvox.githubuserlist.ui.search
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import com.symvox.githubuserlist.usecase.UserUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -53,7 +52,7 @@ class SearchViewModel @Inject constructor(
             it.printStackTrace()
         }.stateIn(
             scope = viewModelScope,
-            started = SharingStarted.Lazily,//it will allow the StateFlow survive 5 seconds before it been canceled
+            started = SharingStarted.Lazily,
             initialValue = emptyList()
         )
 
