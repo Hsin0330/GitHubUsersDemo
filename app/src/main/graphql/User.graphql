@@ -1,0 +1,38 @@
+query UserQuery($name: String!, $cursor: String, $pageSize: Int) {
+    search(query: $name, type: USER, after: $cursor, first: $pageSize) {
+        userCount,
+        pageInfo {
+            endCursor,
+            hasNextPage,
+            startCursor,
+            hasPreviousPage
+        },
+        nodes {
+            ... on User {
+                id
+                login
+                name
+                avatarUrl
+                followers {
+                    totalCount
+                }
+                following {
+                    totalCount
+                }
+            }
+        }
+    }
+}
+
+query UserPreviewQuery($name: String!) {
+    search(query: $name, type: USER, first: 10) {
+        userCount,
+        nodes {
+            ... on User {
+                id
+                login
+                name
+            }
+        }
+    }
+}
