@@ -1,0 +1,31 @@
+query UserRepositoriesQuery($id: String!, $cursor: String, $pageSize: Int) {
+    user(login: $id) {
+        login
+        name
+        avatarUrl
+        followers {
+            totalCount
+        }
+        following {
+            totalCount
+        }
+        repositories(isFork: false, after: $cursor, first: $pageSize) {
+            nodes {
+                name,
+                primaryLanguage {
+                    color,
+                    name
+                },
+                stargazerCount,
+                description,
+                url
+            },
+            pageInfo {
+                endCursor,
+                hasNextPage,
+                startCursor,
+                hasPreviousPage
+            }
+        }
+    }
+}

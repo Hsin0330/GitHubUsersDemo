@@ -4,7 +4,9 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.apollo.graphql)
     alias(libs.plugins.kotlin.hilt)
-    id("kotlin-kapt")
+    alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.kapt)
+    alias(libs.plugins.kotlin.parcelize)
 }
 
 android {
@@ -52,6 +54,8 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.androidx.paging.runtime)
+    implementation(libs.androidx.paging.compose)
     implementation(platform(libs.okhttp.bom))
     implementation(libs.okhttp.core)
     implementation(libs.retrofit2)
@@ -61,7 +65,11 @@ dependencies {
     implementation(libs.coli.network)
     implementation(libs.hilt.android.core)
     kapt(libs.hilt.android.compiler)
+    implementation(libs.hilt.android.navigation)
     implementation(libs.apollo.graphql.core)
+    implementation(libs.kotlinx.serialization.json)
+    implementation(libs.navigation.compose)
+    implementation(libs.constraintlayout.compose)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

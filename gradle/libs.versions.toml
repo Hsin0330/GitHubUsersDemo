@@ -5,16 +5,22 @@ coreKtx = "1.10.1"
 junit = "4.13.2"
 junitVersion = "1.1.5"
 espressoCore = "3.5.1"
-lifecycleRuntimeKtx = "2.6.1"
-activityCompose = "1.8.0"
-composeBom = "2024.04.01"
+lifecycleRuntimeKtx = "2.8.7"
+activityCompose = "1.9.3"
+composeBom = "2024.12.01"
 okhttpBom = "4.12.0"
 retrofit = "2.11.0"
 gson = "2.11.0"
-glide = "4.16.0"
 coli = "3.0.4"
 hilt = "2.51.1"
 graphql = "4.1.0"
+paging_version = "3.3.5"
+navigation = "2.8.4"
+hilt_navigation_compose = "1.2.0"
+kotlin_serialization = "2.0.20"
+kotlin_serialization_json = "1.7.3"
+constraintlayout = "1.1.0"
+constraintlayoutVersion = "2.2.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -40,7 +46,14 @@ coli-compose = { group = "io.coil-kt.coil3", name = "coil-compose", version.ref 
 coli-network = { group = "io.coil-kt.coil3", name = "coil-network-okhttp", version.ref = "coli"}
 hilt-android-core = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt"}
 hilt-android-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt"}
+hilt-android-navigation = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hilt_navigation_compose"}
 apollo-graphql-core = { group = "com.apollographql.apollo", name = "apollo-runtime", version.ref = "graphql"}
+androidx-paging-runtime = { group = "androidx.paging", name = "paging-runtime", version.ref = "paging_version"}
+androidx-paging-compose = { group = "androidx.paging", name = "paging-compose", version.ref = "paging_version"}
+kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlin_serialization_json"}
+navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigation"}
+constraintlayout-compose = { group = "androidx.constraintlayout", name = "constraintlayout-compose", version.ref = "constraintlayout"}
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayoutVersion" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
@@ -48,3 +61,7 @@ kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlin-hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 apollo-graphql = { id = "com.apollographql.apollo", version.ref = "graphql" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin_serialization" }
+kapt = { id = "kotlin-kapt" }
+kotlin-parcelize = { id = "kotlin-parcelize"}
+
