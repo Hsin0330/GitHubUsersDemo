@@ -5,7 +5,6 @@ import androidx.paging.PagingState
 import com.apollographql.apollo.ApolloClient
 import com.apollographql.apollo.api.Optional
 import com.symvox.githubuserlist.UserQuery
-import com.symvox.githubuserlist.UserQuery.Node
 import com.symvox.githubuserlist.entity.User
 import com.symvox.githubuserlist.network.extension.mapToUserList
 
