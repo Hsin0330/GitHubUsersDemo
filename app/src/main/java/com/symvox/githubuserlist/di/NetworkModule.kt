@@ -20,6 +20,6 @@ object NetworkModule {
     fun provideApollo(baseUrl: String): ApolloClient =
         ApolloClient.Builder()
             .serverUrl(baseUrl)
-            .addHttpHeader("Authorization", "")
+            .addHttpHeader("Authorization", "" /* Put token here */)
             .build()
 }
