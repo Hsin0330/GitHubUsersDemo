@@ -1,5 +1,6 @@
 # How to build
 After download the project, please put the Github bearer token in HttpHeader in the NetworkModule
+[bearer $Token]
 
 or 
 
